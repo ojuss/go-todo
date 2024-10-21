@@ -1,0 +1,31 @@
+# .air.toml
+
+# Working directory
+root = "."
+
+# Directory to watch for changes
+[dirs]
+  watch = ["."]
+  exclude = ["vendor", "node_modules", "tmp"]
+
+# Files to watch for changes
+[files]
+  include = ["**/*.go", "**/*.tpl", "**/*.html"]
+  exclude = []
+
+# Log level
+[log]
+  level = "debug"
+
+# Command to build the Go application (with .exe for Windows)
+[build]
+  cmd = "go build -o ./tmp/main.exe ."
+  bin = "./tmp/main.exe"
+
+# Command to run the built binary
+[run]
+  cmd = "./tmp/main.exe"
+
+# Optional: environment variables (if required)
+[env]
+  GOPATH = "/path/to/gopath"
